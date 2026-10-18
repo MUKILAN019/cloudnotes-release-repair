@@ -2,6 +2,10 @@
 
 Repair three bounded configuration defects, then verify CloudNotes locally. Fork this repository, clone your fork, create `fix/local-release`, and open the folder in your IDE. Assessment is provided separately by your instructor.
 
+## Submission boundary — do not modify the question repository
+
+This repository is the intentionally broken question starter. **Do not push any branch or fix to `kalviumcommunity/cloudnotes-release-repair`. Do not open a pull request against this question repository.** Work only in your personal fork. If committing/pushing, confirm `git remote -v` points `origin` to your own GitHub username, then push only there. Submit the PDF through the assessment portal; no pull request is required anywhere.
+
 ## Free local setup
 
 Use Terraform >=1.4 and <2, Git, curl, Docker Engine and Docker Compose v2 supporting `up --wait`, and a free IDE/PDF exporter. Docker Desktop is optional only where its free-use licence applies. No paid tools, cloud resources, registry login, or real credentials are needed. Your instructor prepares tools and caches before the 35-minute assessment. First image/package downloads need internet, not payment.
