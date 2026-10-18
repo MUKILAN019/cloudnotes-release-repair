@@ -1,0 +1,7 @@
+.git
+terraform
+scripts
+*.md
+.env
+__pycache__
+.DS_Store

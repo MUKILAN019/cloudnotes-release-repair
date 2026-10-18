@@ -1,0 +1,8 @@
+.terraform/
+*.tfstate*
+*.tfplan
+tfplan
+.env
+__pycache__/
+*.pyc
+.DS_Store
