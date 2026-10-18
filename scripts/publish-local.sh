@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 cd "$(dirname "$0")/.."
-image=localhost:5000/cloudnotes:1.0.0
+image=localhost:5050/cloudnotes:1.0.0
 docker compose -p cloudnotes-practice-registry -f registry.yaml up -d
 for attempt in {1..30}; do
-  if curl -fsS http://localhost:5000/v2/ >/dev/null; then break; fi
+  if curl -fsS http://localhost:5050/v2/ >/dev/null; then break; fi
   sleep 1
 done
-curl -fsS http://localhost:5000/v2/ >/dev/null
+curl -fsS http://localhost:5050/v2/ >/dev/null
 docker tag cloudnotes:1.0.0 "$image"
 docker push "$image"
 # Remove registry-qualified reference so next command explicitly retrieves it.

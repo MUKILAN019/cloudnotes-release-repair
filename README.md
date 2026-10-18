@@ -6,7 +6,7 @@ Repair three bounded configuration defects, then verify CloudNotes locally. Fork
 
 Use Terraform >=1.4 and <2, Git, curl, Docker Engine and Docker Compose v2 supporting `up --wait`, and a free IDE/PDF exporter. Docker Desktop is optional only where its free-use licence applies. No paid tools, cloud resources, registry login, or real credentials are needed. Your instructor prepares tools and caches before the 35-minute assessment. First image/package downloads need internet, not payment.
 
-Host ports 5000 (local registry) and 8080 (web) must be free. The prepared Docker engine must support the loopback HTTP registry. Do not install or reconfigure Docker during the exam.
+Host ports 5050 (local registry) and 8080 (web) must be free. The prepared Docker engine must support the loopback HTTP registry. Do not install or reconfigure Docker during the exam.
 
 ## Files to repair
 
@@ -47,7 +47,7 @@ docker compose ps
 curl -i http://localhost:8080/health
 ```
 
-The publish script starts a separate local registry project, tags `cloudnotes:1.0.0` as `localhost:5000/cloudnotes:1.0.0`, pushes, removes that local registry-qualified reference, and explicitly pulls it back. It prints a final image/digest summary. Docker may reuse cached layers; this is registry push/pull verification, not proof of a cold download. Do not run `docker login` or push to Docker Hub.
+The publish script starts a separate local registry project, tags `cloudnotes:1.0.0` as `localhost:5050/cloudnotes:1.0.0`, pushes, removes that local registry-qualified reference, and explicitly pulls it back. It prints a final image/digest summary. Docker may reuse cached layers; this is registry push/pull verification, not proof of a cold download. Do not run `docker login` or push to Docker Hub.
 
 Compose runs `web` and PostgreSQL `db` on its project network. Host requests use `127.0.0.1:8080`; the app listens on container port 8080. The database listens on 5432 inside the Compose network and has no host-published port. The documented credentials `student` / `practice-only` are intentionally fake local practice values, not real secrets and not a planted security defect. Never reuse them elsewhere. No real data should be entered.
 

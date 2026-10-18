@@ -7,5 +7,5 @@ variable "environment" {
 variable "image_tag" {
   type        = string
   description = "Versioned local-registry image reference."
-  default     = "localhost:5000/cloudnotes:1.0.0"
+  default     = "localhost:5050/cloudnotes:1.0.0"
 }
